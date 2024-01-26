@@ -3,7 +3,6 @@ build/
 bin/
 lib/
 
-modules/
 
 # Ignore compiled files
 *.o
