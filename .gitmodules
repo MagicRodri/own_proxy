@@ -1,0 +1,7 @@
+[submodule "modules/PX4-OpticalFlow"]
+	path = modules/PX4-OpticalFlow
+	url = https://github.com/MagicRodri/PX4-OpticalFlow.git
+[submodule "modules/PX4-OpticalFlow"]
+	path = modules/async-sockets-cpp
+	url = https://github.com/MagicRodri/async-sockets-cpp.git
+    branch = rodri

@@ -1,0 +1,36 @@
+# Ignore build artifacts
+build/
+bin/
+lib/
+
+# Ignore compiled files
+*.o
+*.out
+*.exe
+
+# Ignore generated files
+Makefile
+CMakeFiles/
+CMakeCache.txt
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore dependencies and package management files
+CMakeLists.txt.user
+*.user
+*.suo
+*.userprefs
+*.dll
+*.lib
+*.exp
+*.pdb
+
+# Ignore generated documentation
+doc/
+
+# Ignore logs and databases
+*.log
+*.sqlite
+*.db
