@@ -9,8 +9,6 @@
 #include <thread>
 #include <string>
 
-#include "udpserver.hpp"
-
 using namespace mavsdk;
 using std::chrono::seconds;
 
@@ -48,27 +46,10 @@ int main(int argc, char const *argv[])
     subscribe_highres_imu(mavlink_passthrough);
     // subscribe_armed(telemetry);
 
-    UDPServer<> udpServer;
-    udpServer.onRawMessageReceived = [&](const char *message, int length, std::string const &ipv4, uint16_t port)
-    {
-        std::cout << ipv4 << ":" << port << " => " << message << "(" << length << ")"
-                  << "\n";
-
-        // Echo to client:
-        udpServer.SendTo(message, length, ipv4, port);
-    };
-
-    // Bind the server to a port.
-    udpServer.Bind(8888, [](int errorCode, std::string const &errorMessage)
-                   {
-        // BINDING FAILED:
-        std::cout << errorCode << " : " << errorMessage << "\n"; });
-
     while (true)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(25));
     }
-    udpServer.Close();
     return 0;
 }
 
